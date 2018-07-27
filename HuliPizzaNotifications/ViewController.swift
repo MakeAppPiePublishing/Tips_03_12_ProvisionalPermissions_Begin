@@ -153,10 +153,12 @@ class ViewController: UIViewController,UNUserNotificationCenterDelegate {
         // Code added for iOS Developer Tips
         // Will be explained in a upcoming tip, but causes all buttons
         // in the stackview to be round with a yellow highlight.
+        // do it here bcuse this uses width.
         for arrangedSubview in stackView.arrangedSubviews{
             let radius = arrangedSubview.frame.height / 2.0
             if let button = arrangedSubview as? UIButton{
                 arrangedSubview.layer.cornerRadius = radius
+                //normally I'd set button colors only once, but to prevent distraction from lesson it is here. 
                 button.setTitleColor(UIColor(named: "Sunglow"), for: .highlighted)
             }
         }
